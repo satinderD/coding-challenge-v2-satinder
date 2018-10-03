@@ -8,14 +8,12 @@ interface IProps {
 
 const PostSingle = (props: IProps) => {
   return (
-    <React.Fragment>
-      <Paper style={{ padding: 10, marginTop: 20, marginBottom: 20 }}>
-        <Typography variant="display2" style={{ textTransform: "capitalize" }}>
-          {props.post.title}
-        </Typography>
-        <Typography paragraph={true}>{props.post.body}</Typography>
-      </Paper>
-    </React.Fragment>
+    <Paper style={{ padding: 10, marginTop: 20, marginBottom: 20 }}>
+      <Typography variant="display2" style={{ textTransform: "capitalize" }}>
+        {props.post.title}
+      </Typography>
+      <Typography paragraph={true}>{props.post.body}</Typography>
+    </Paper>
   );
 };
 
