@@ -8,7 +8,6 @@ interface IProps extends RouteComponentProps<any> {}
 class Error extends React.Component<IProps> {
   public onClick = () => {
     this.props.history.push("/");
-    location.reload();
   };
 
   public render() {

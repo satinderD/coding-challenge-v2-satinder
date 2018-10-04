@@ -7,7 +7,6 @@ interface IProps extends RouteComponentProps<any> {}
 class Header extends React.Component<IProps> {
   public onClick = () => {
     this.props.history.push("/");
-    location.reload();
   };
 
   public render() {

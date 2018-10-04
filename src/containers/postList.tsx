@@ -11,8 +11,12 @@ interface IProps extends RouteComponentProps<any> {
   setPost(post: IPost): IPostAction;
 }
 
+interface IState {
+  posts: IPost[]
+}
+
 class PostList extends React.Component<IProps> {
-  public state = {
+  public state: IState = {
     posts: []
   };
 
@@ -35,6 +39,12 @@ class PostList extends React.Component<IProps> {
       }
       this.props.setPost(response[0]);
     });
+  }
+
+  public componentDidUpdate(prevProps: IProps) {
+    if (!this.props.match.params.id && prevProps.match.params.id !== this.props.match.params.id) {
+      this.props.setPost(this.state.posts[0]);
+    }
   }
 
   public render() {
